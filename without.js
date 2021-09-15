@@ -22,19 +22,28 @@ const assertArraysEqual = function(array1, array2) {
   }
 };
 
-// Implement without which will return a subset of a given array, 
-// removing unwanted elements.
-const without = function () {
-  
+const without = function(source, itemsToRemove) {
+  let result = [...source];
+  for (let i = 0; i < result.length; i++) {
+    // console.log('source: ',source[i]);
+    for (let j = 0; j < itemsToRemove.length; j++) {
+      // console.log('source: ',source[i], 'itemsToRemove: ', itemsToRemove[j] );
+      if (result[i] === itemsToRemove[j]) {
+        result.splice(i, 1);
+      }
+    }
+  }
+  return result;
 };
 
 // Test cases
-// without([1, 2, 3], [1]) // => [2, 3]
-// without(["1", "2", "3"], [1, 2, "3"]) // => ["1", "2"]
+console.log(without([1, 2, 3], [1])); // => [2, 3]
+console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
 
 // Write a test case to make sure that the original array is not modified.
 const words = ["hello", "world", "lighthouse"];
-// without(words, ["lighthouse"]); // no need to capture return value for this test case
+console.log(without(words, ["lighthouse"])); // no need to capture return value for this test case
 
 // Make sure the original array was not altered by the without function
 assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+
