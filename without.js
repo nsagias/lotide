@@ -22,12 +22,11 @@ const assertArraysEqual = function(array1, array2) {
   }
 };
 
+
 const without = function(source, itemsToRemove) {
   let result = [...source];
   for (let i = 0; i < result.length; i++) {
-    // console.log('source: ',source[i]);
     for (let j = 0; j < itemsToRemove.length; j++) {
-      // console.log('source: ',source[i], 'itemsToRemove: ', itemsToRemove[j] );
       if (result[i] === itemsToRemove[j]) {
         result.splice(i, 1);
       }
