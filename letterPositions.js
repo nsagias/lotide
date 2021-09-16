@@ -29,8 +29,26 @@ const assertArraysEqual = function(array1, array2) {
 
 const letterPositions = function(sentence) {
   const results = {};
+   // get each letter from sentence
+   for (let i = 0; i < sentence.length; i++) {
+    // if in object update with +1
+    // need to update key and with addtion position in arraay
+    if (sentence[i] !== " ") {
+      if (results[sentence[i]]) {
+        console.log('alredy in: ', sentence[i], 'already in position: ', i);
+        results[sentence[i]] += 1;
+      }
+      // if not in object add to object with initial value 1
+      // need to create key and add first value to array 
+      if (!results[sentence[i]]) {
+        console.log('add new: ', sentence[i], 'add new position: ', i);
+        results[sentence[i]] = 1;
+      }
+    }
+  }
+  console.log(results);
   return results;
-}
+};
 
 // // expected 
 // results = { 
