@@ -7,7 +7,7 @@ const assertEqual = function(actual, expected) {
 };
 
 /**
- * The function should take in a sentence (as a string) 
+ * The function should take in a sentence (as a string)
  * and then return a count of each of the letters in that sentence.
  */
 
@@ -15,12 +15,13 @@ const countLetters = function(sentence) {
   const results = {};
   // get each letter from sentence
   for (const letter in sentence) {
-    // letter already in object, update result +1
+    // if in object update with +1
     if (results[sentence[letter]]) {
       results[sentence[letter]] += 1;
-    } else {
-      // add new object with value 1
-      results[sentence[letter]] = 1; 
+    }
+    // if not in object add to object with initial value 1
+    if (!results[sentence[letter]]) {
+      results[sentence[letter]] = 1;
     }
   }
   return results;
