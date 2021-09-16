@@ -12,17 +12,28 @@ const assertEqual = function(actual, expected) {
  */
 
 const countLetters = function(sentence) {
-  const result = {};
-  return result;
+  const results = {};
+  // get each letter from sentence
+  for (const letter in sentence) {
+    // letter already in object, update result +1
+    if (results[sentence[letter]]) {
+      results[sentence[letter]] += 1;
+    } else {
+      // add new object with value 1
+      results[sentence[letter]] = 1; 
+    }
+  }
+  return results;
 };
 
 let sentence = "tenet";
-const result1 = countLetters(sentence);
 
+const result1 = countLetters(sentence);
+console.log('letter in result', result1);
 
 assertEqual(result1["t"], 2);
 assertEqual(result1["d"], undefined);
-assertEqual(result1["n"], 2);
+assertEqual(result1["n"], 1);
 assertEqual(result1["c"], undefined);
 
 
