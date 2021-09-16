@@ -11,11 +11,19 @@ const assertEqual = function(actual, expected) {
  * and then return a count of each of the letters in that sentence.
  */
 
-const countLetters = function() {
+const countLetters = function(sentence) {
   const result = {};
   return result;
 };
 
+let sentence = "tenet";
+const result1 = countLetters(sentence);
+
+
+assertEqual(result1["t"], 2);
+assertEqual(result1["d"], undefined);
+assertEqual(result1["n"], 2);
+assertEqual(result1["c"], undefined);
 
 
 
