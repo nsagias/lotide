@@ -29,43 +29,29 @@ const assertArraysEqual = function(array1, array2) {
 
 const letterPositions = function(sentence) {
   const results = {};
-   // get each letter from sentence
-   for (let i = 0; i < sentence.length; i++) {
-    // if in object update with +1
-    // need to update key and with addtion position in arraay
+  // get each letter from sentence
+  for (let i = 0; i < sentence.length; i++) {
+    // if space character skip
     if (sentence[i] !== " ") {
+      // need to update key and with addtion position in arraay
       if (results[sentence[i]]) {
-        console.log('alredy in: ', sentence[i], 'already in position: ', i);
-        results[sentence[i]] += 1;
+        // push on to array
+        results[sentence[i]].push(i);
       }
-      // if not in object add to object with initial value 1
-      // need to create key and add first value to array 
+      // create key and add first value to array
       if (!results[sentence[i]]) {
-        console.log('add new: ', sentence[i], 'add new position: ', i);
-        results[sentence[i]] = 1;
+        results[sentence[i]] = [i];
       }
     }
   }
-  console.log(results);
   return results;
 };
 
-// // expected 
-// results = { 
-//   l: [0],
-//   i: [1, 11],
-//   g: [2],
-//   h: [3, 5, 15, 18],
-//   t: [4, 14],
-//   o: [6, 19],
-//   u: [7, 20],
-//   s: [8, 21],
-//   e: [9, 16, 22],
-//   n: [12]
-// }
+
 let results1 = letterPositions("lighthouse in the house");
 
-assertArraysEqual(results1['l'], [0]); // => true
-assertArraysEqual(results1['h'], [3, 5, 15, 18]); // => true
-assertArraysEqual(results1['n'], [12]); // => true
+assertArraysEqual(results1['l'], [0]); // => PASS
+assertArraysEqual(results1['h'], [3, 5, 15, 18]); // => PASS
+assertArraysEqual(results1['n'], [12]); // => PASS
+assertArraysEqual(results1['g'], [12]); // => FAIL
 
