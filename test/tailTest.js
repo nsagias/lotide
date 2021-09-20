@@ -1,10 +1,17 @@
+const assert = require('chai').assert;
 const tail = require('../tail.js');
-const assertEqual = require('../assertEqual');
-const assertArraysEqual = require('../assertArraysEqual');
 
-// Test Case: Check the original array
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-let result1 = tail(words);
-
-assertEqual(result1.length, 2); // original array should still have 3 elements!
-assertArraysEqual(result1, ["Lighthouse", "Labs"]);
+describe("#tail", ()=> {
+  it("returns 2 for array length", ()=> {
+    const wordsArray = ["Yo Yo", "Lighthouse", "Labs"];
+    const result = tail(wordsArray);
+    const expectedResult = ["Lighthouse", "Labs"];
+    assert.deepEqual(result, expectedResult);
+  });
+  it("return and array of length 2", () => {
+    const wordsArray = ["Yo Yo", "Lighthouse", "Labs"];
+    const result = tail(wordsArray).length;
+    const expectedResult = 2;
+    assert.deepEqual(result, expectedResult);
+  });
+});
