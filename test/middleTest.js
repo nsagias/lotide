@@ -1,6 +1,5 @@
 const assert = require('chai').assert;
 const middle = require('../middle');
-const assertArraysEqual = require('../assertArraysEqual');
 
 
 describe("#middle", () =>{
@@ -34,21 +33,16 @@ describe("#middle", () =>{
     const expectedResult = [3];
     assert.deepEqual(result, expectedResult);
   });
-  // console.log('EVEN should return the two middle values');
-    assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-    assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
-
-  it("it returns and empty array if given 2 value", ()=> {
-    const numArray = [1,2];
+  it("it returns two middle values if even: [2,3]", ()=> {
+    const numArray = [1, 2, 3, 4];
     const result = middle(numArray);
-    const expectedResult = [];
+    const expectedResult = [2,3];
     assert.deepEqual(result, expectedResult);
   });
-  // it("it returns and empty array if given 2 value", ()=> {
-  //   const numArray = [1,2];
-  //   const result = middle(numArray);
-  //   const expectedResult = [];
-  //   assert.deepEqual(result, expectedResult);
-  // });
-  
+  it("it returns two middle values if even: [3,4]", ()=> {
+    const numArray = [1, 2, 3, 4, 5, 6];
+    const result = middle(numArray);
+    const expectedResult = [3,4];
+    assert.deepEqual(result, expectedResult);
+  });
 });
