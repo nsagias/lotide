@@ -38,4 +38,4 @@ assertEqual(result1["n"], 1);
 assertEqual(result1["c"], undefined);
 
 
-
+module.exports = countLetters;

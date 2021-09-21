@@ -55,3 +55,4 @@ assertArraysEqual(results1['h'], [3, 5, 15, 18]); // => PASS
 assertArraysEqual(results1['n'], [12]); // => PASS
 assertArraysEqual(results1['g'], [12]); // => FAIL
 
+module.exports = letterPositions;

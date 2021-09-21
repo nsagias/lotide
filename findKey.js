@@ -45,3 +45,5 @@ let testAnonFn = x => x.stars === 2;
 
 let testOutput = "noma";
 assertEqual(findKey(testObject,  testAnonFn), testOutput); // => MUST PASS
+
+module.exports = findKey;
